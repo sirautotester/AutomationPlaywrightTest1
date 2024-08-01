@@ -90,6 +90,7 @@ SOLUTION:
 
 
 **2. Were not able to Drag and Drop widgets to the work container.**
+
 TEST:
     #     # 8. Drag and Drop "Send Email" widget to the container
     sendEmailWidget = page.locator("#workflow div").filter(has_text="Send email").nth(3)
