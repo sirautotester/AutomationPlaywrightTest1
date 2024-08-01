@@ -86,6 +86,13 @@ E           waiting for get_by_role("button", name="Create journey")
 venv/lib/python3.12/site-packages/playwright/_impl/_connection.py:514: TimeoutError
 
 SOLUTION:
+I used steps diectly without any classes:
+    #     # 5. Open Create Journey page
+    
+    page.get_by_role("button", name="image Create journey").click()
+
+    #     # 6. Create Journey record from Scratch
+    page.get_by_role("button", name="Create a journey").click()
 
 
 
