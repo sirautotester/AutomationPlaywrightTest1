@@ -1,14 +1,17 @@
-from src.pages.search import SearchPage
+from src.pages.home import HomePage
 
 class MainPage:
     def __init__(self, page):
         self.page = page
-        self.search_term_input = page.get_by_placeholder("Search Amazon.in")
 
     def navigate(self):
-        self.page.goto("https://www.amazon.in/")
+        self.page.goto("https://app.intempt.com/")
 
-    def search(self, text):
-        self.search_term_input.fill(text)
-        self.search_term_input.press("Enter")    
-        return  SearchPage(self.page)
+    def login_email(self, email):
+        self.page.get_by_role("textbox", name="Enter your email").fill(email)
+        
+    def login_password(self, password):
+        self.page.get_by_placeholder("*******").fill(password)
+        self.page.get_by_role("button", name="Login").click()
+ 
+        return HomePage(self.page)
